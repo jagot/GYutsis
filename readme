@@ -1,0 +1,194 @@
+		          GYutsis 1.1 README
+
+1.  Introduction
+2.  System requirements
+3.  Installation instructions
+4.  Running the program
+4.1 Running the text-mode program(s)
+5.  Documentation
+6.  Files
+7.  Homepage
+8.  Legal Remarks
+
+1. Introduction
+---------------
+
+The GYutsis package contains a text-mode program
+	CycleCostAlgorithm  
+and a graphical front end 
+	GYutsis 
+wich generate a summation formula over products of 6j-coefficients 
+for a general angular momenta recoupling coefficient (or 
+3nj-coefficients). For problems upto 15 j's, corresponding with
+6 initial angular momenta, the generated formulas are confirmed to be
+optimal, whichever heuristic is used. 
+
+The jar-file also contains some other minor text-mode programs:
+PathGenerator and CycleGenerator, generating the paths/cycles 
+of the graph given. 
+
+2. System requirements
+----------------------
+
+Sun's Java Runtime Environment (JRE) 1.4 or higher has to be installed
+on your system. 
+
+A graphical Windows system is required like MS Windows, X Windows 
+(Linux/Unix and friends) or Mac OS for running the GYutsis program
+(graphical front end for CycleCostAlgorithm).
+
+3. Installation instructions
+----------------------------
+
+Simply unpack de tarball or zipfile in a directory of your choice.  
+
+4. Running the program
+----------------------
+
+Run the GYutsis script (Linux/Unix and friends) or the batch file 
+GYutsis.bat (MS Windows) in order to start the graphical front end 
+with an optional file argument containing a problem.
+
+On other OS's where a Sun's JRE 1.4 or higher is installed running
+the command:
+	java -jar GYutsis.jar
+should start the program. Again an optional file argument containing
+a problem can be specified. 
+
+4.1 Running the Text-mode program(s)
+------------------------------------
+
+In order to run the text-mode program(s) you need to extract the 
+desired class out of the jar-file. We'll use CycleCostAlgorithm 
+to illustrate the procedure:
+	jar xf GYutsis.jar CycleCostAlgorithm.class
+and run it with the command
+	java -classpath GYutsis.jar CycleCostAlgorithm <problem-file>
+with <problem-file> the filename containing the problem in BRAKET or YTS
+format.
+
+When running the text-mode programs without arguments will print a
+brief usage. For detailed information about the options and/or file
+formats we refer to the documentation.
+
+5. Documentation
+----------------
+
+Running the GYutsis program and selecting Help->Help from the menus
+will rise a window containing the helpfile. 
+
+It can also be extracted from the jar-file to view it with your 
+favorite browser, since it is made in plain HTML:
+	jar xf GYutsis.jar GYutsisHelp.html
+
+6. Files
+--------
+
+After unpacking you can find the source code in the src/-directory, 
+some input data in de testcases/-directory and documentation for
+developers in the doc/-directory.
+
+The following files should be found after unpacking the tarball/zipfile
+in de <INSTALL>-directory:
+
+GYutsis.jar  GYutsis  GYutsis.bat   README src/  testcases/
+
+<INSTALL>/doc:
+
+AbstractCCAHeuristic.html          GYutsis.html
+AbstractGRWrappedTextVisitor.html  GenRecoupCoeff.html
+AbstractGraph.html                 Graph.html
+AbstractYutsis.html                JStreamedTextArea.html
+CCAHeuristic.html                  NodeIterator.html
+Cycle.html                         Path.html
+CycleCostAlgorithm.html            PathGenerator.html
+CycleCountHeuristic.html           StreamPanel.html
+CycleGenerator.html                Yutsis.html
+Edge.html                          YutsisGraph.html
+EdgeCostHeuristic.html             allclasses-frame.html
+GR6jSymbol.html                    allclasses-noframe.html
+GRCompoundFactor.html              constant-values.html
+GRFactor.html                      deprecated-list.html
+GRKrDelta.html                     help-doc.html
+GRPreFactor.html                   index-all.html
+GRSummation.html                   index.html
+GRVisitor.html                     overview-tree.html
+GRWrappedLaTeXVisitor.html         package-list
+GRWrappedMapleVisitor.html         packages.html
+GRWrappedRacahVisitor.html         serialized-form.html
+GRWrappedStringVisitor.html        stylesheet.css
+
+<INSTALL>/src:
+
+AbstractCCAHeuristic.java          GRSummation.java
+AbstractGRWrappedTextVisitor.java  GRVisitor.java
+AbstractGraph.java                 GRWrappedLaTeXVisitor.java
+AbstractYutsis.java                GRWrappedMapleVisitor.java
+CCAHeuristic.java                  GRWrappedRacahVisitor.java
+Cycle.java                         GRWrappedStringVisitor.java
+CycleCostAlgorithm.java            GYutsis.java
+CycleCountHeuristic.java           GenRecoupCoeff.java
+CycleGenerator.java                Graph.java
+Edge.java                          JStreamedTextArea.java
+EdgeCostHeuristic.java             NodeIterator.java
+GR6jSymbol.java                    Path.java
+GRCompoundFactor.java              PathGenerator.java
+GRFactor.java                      StreamPanel.java
+GRKrDelta.java                     Yutsis.java
+GRPreFactor.java                   YutsisGraph.java
+
+<INSTALL>/testcases:
+
+cage3_5.braket     cage3_9_11.braket  cage3_9_4.braket  f0.braket   f5.braket
+cage3_5.yts        cage3_9_12.braket  cage3_9_5.braket  f0.yts      f6.braket
+cage3_6.braket     cage3_9_13.braket  cage3_9_6.braket  f1.braket   f7.braket
+cage3_6.yts        cage3_9_14.braket  cage3_9_7.braket  f1.yts      f8.braket
+cage3_7.braket     cage3_9_15.braket  cage3_9_8.braket  f10.braket  f9.braket
+cage3_7.yts        cage3_9_16.braket  cage3_9_9.braket  f11.braket  g1.braket
+cage3_8.braket     cage3_9_17.braket  cubic16g6.braket  f12.braket  g2.braket
+cage3_8.yts        cage3_9_18.braket  cubic34g8.braket  f2.braket   g4.braket
+cage3_9_1.braket   cage3_9_2.braket   cubic34g8.yts     f3.braket
+cage3_9_10.braket  cage3_9_3.braket   def9j.braket      f4.braket
+  
+7. Homepage
+-----------
+The program (and updates) can be downloaded free of charge for
+non-commercial applications from:
+	http://caagt.rug.ac.be/yutsis/yutsis-software.html
+
+The homepage of the Yutsis-project can be found at:
+	http://caagt.rug.ac.be/yutsis
+
+The homepage of our resarch workgroup 
+"Combinatorial Algorithms and Algoritmic Graph Theory" is:
+	http://caagt.rug.ac.be
+
+Please send all questions/remarks/feedback to 
+	Dries.VanDyck@rug.ac.be
+
+8. Legal remarks
+----------------
+
+This software is provided "AS IS" WITHOUT ANY WARRANTY.
+
+Use of the program is ENTIRELY AT YOUR OWN RISK and 
+neither myself as the donor of the program, nor any 
+distributing agent, is liable for any loss or
+consequential damage suffered by the recipient
+as a result of any use he makes of this program.
+
+The author hereby grants permission to use, copy and modify this
+software and its documentation for any non commercial purpose,
+provided that existing copyright notices are retained in all copies. 
+No written agreement, license, or royally fee is required.
+
+Commercial use of GYutsis without prior written permission is
+prohibited. The terms of this copyright notice also apply to any
+modification to this software.
+
+
+Dries Van Dyck
+Dept. of Applied Mathematics and Computer Science, Ghent University
+Krijgslaan 281 - S9, B - 9000 Ghent, Belgium
+Phone: +32-(0)9-264.48.91, Fax: +32-(0)9-264.49.95
+E-mail: Dries.VanDyck@rug.ac.be
