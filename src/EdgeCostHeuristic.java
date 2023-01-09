@@ -155,7 +155,7 @@ public class EdgeCostHeuristic
 		    int [] icnodes = 
 			interchangeNodes(c,new int [] {previous,current});
 		    bestoperations.add("IC " + previous + " " + current + 
-				       " " + icnodes[0] + icnodes[1]);
+				       " " + icnodes[0] + " " + icnodes[1]);
 		}
 		previous = current;
 	    }
@@ -170,7 +170,7 @@ public class EdgeCostHeuristic
 		int [] icnodes = 
 		    interchangeNodes(c,new int [] {previous,first});
 		bestoperations.add("IC " + previous + " " + first + 
-				   " " + icnodes[0] + icnodes[1]);
+				   " " + icnodes[0] + " " + icnodes[1]);
 	    }
 	    if (minedgecost < bestcycleedgecost ||
 		(minedgecost == bestcycleedgecost 

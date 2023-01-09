@@ -133,6 +133,7 @@ public class CycleCostAlgorithm
                ((YutsisGraph) y).edges(bestcycleedge[0],
                                        bestcycleedge[1])[0].toString()
                : "(" +bestcycleedge[0]+","+bestcycleedge[1]+")"));
+        log("IC nodes: "+besticnodes[0]+", "+besticnodes[1]);
         if (candidates.size() > 0){
             log("Equivalent operations:");
             for (Iterator i = candidates.iterator(); i.hasNext();){
@@ -182,6 +183,17 @@ public class CycleCostAlgorithm
      **/
     public void setLogStream(PrintStream logstream){ log = logstream;}
 
+    public void logCurrentState(GRVisitor grv){
+        if (log != null){
+            log.println(">>>-----------------------------------");
+            log.println("Current graph:");
+            log.println(y);
+            log.println("Current formula:");
+            outputResults(y,this,grv);
+            log.println("-----------------------------------<<<");
+        }
+    }
+
     /**
      * Reduces the Yutsis object to a so called triangular delta
      * by repeatedly calling performOperation.
@@ -189,9 +201,12 @@ public class CycleCostAlgorithm
      * @see Yutsis
      **/
     public void reduce(){
+        GRVisitor grv = null;
         while (!y.triangularDelta()){
+            logCurrentState(grv);
             performOperation();
         }
+        logCurrentState(grv);
     }
 
     /**
